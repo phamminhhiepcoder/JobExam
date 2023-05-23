@@ -1,0 +1,24 @@
+C:\Users\Administrator\Desktop\APP QUAN LY HOC SINH\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\bin\Debug\DTO.dll
+C:\Users\Administrator\Desktop\APP QUAN LY HOC SINH\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\bin\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\APP QUAN LY HOC SINH\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\APP QUAN LY HOC SINH\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\APP QUAN LY HOC SINH\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.dll
+C:\Users\Administrator\Desktop\APP QUAN LY HOC SINH\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\C# Projects\Lập trình Windows\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\bin\Debug\DTO.dll
+C:\Users\Administrator\Desktop\C# Projects\Lập trình Windows\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\bin\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\C# Projects\Lập trình Windows\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\C# Projects\Lập trình Windows\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\C# Projects\Lập trình Windows\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.dll
+C:\Users\Administrator\Desktop\C# Projects\Lập trình Windows\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\bin\Debug\DTO.dll
+C:\Users\Administrator\Desktop\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\bin\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.dll
+C:\Users\Administrator\Desktop\QuanLyHocSinh\Version 2 QuanLyHocSinh\DTO\obj\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\bin\Debug\DTO.dll
+C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\bin\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\obj\Debug\DTO.dll
+C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\obj\Debug\DTO.pdb
