@@ -53,7 +53,6 @@
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvThongTinSV = new System.Windows.Forms.DataGridView();
-            this.btnPhanLop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +80,6 @@
             // 
             // btnLayDS
             // 
-            this.btnLayDS.Enabled = false;
             this.btnLayDS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
             this.btnLayDS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLayDS.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,7 +88,7 @@
             this.btnLayDS.Name = "btnLayDS";
             this.btnLayDS.Size = new System.Drawing.Size(154, 67);
             this.btnLayDS.TabIndex = 80;
-            this.btnLayDS.Text = "Lấy toàn bộ danh sách của lớp";
+            this.btnLayDS.Text = "Lấy toàn bộ danh sách HS";
             this.btnLayDS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLayDS.UseVisualStyleBackColor = false;
             this.btnLayDS.Click += new System.EventHandler(this.btnLayDS_Click);
@@ -120,11 +118,13 @@
             // cboLopFilter
             // 
             this.cboLopFilter.FormattingEnabled = true;
+            this.cboLopFilter.Items.AddRange(new object[] {
+            "Toàn bộ"});
             this.cboLopFilter.Location = new System.Drawing.Point(1034, 234);
             this.cboLopFilter.Name = "cboLopFilter";
             this.cboLopFilter.Size = new System.Drawing.Size(176, 21);
             this.cboLopFilter.TabIndex = 77;
-            this.cboLopFilter.SelectedValueChanged += new System.EventHandler(this.cboNienKhoaFilter_SelectedValueChanged);
+            this.cboLopFilter.SelectedValueChanged += new System.EventHandler(this.cboLopFilter_SelectedValueChanged);
             // 
             // label10
             // 
@@ -316,9 +316,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(517, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(293, 33);
+            this.label7.Size = new System.Drawing.Size(295, 33);
             this.label7.TabIndex = 59;
-            this.label7.Text = "QUẢN LÝ HỌC SINH";
+            this.label7.Text = "QUẢN LÝ SINH VIÊN";
             // 
             // dgvThongTinSV
             // 
@@ -331,28 +331,12 @@
             this.dgvThongTinSV.TabIndex = 58;
             this.dgvThongTinSV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinSV_CellClick);
             // 
-            // btnPhanLop
-            // 
-            this.btnPhanLop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.btnPhanLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhanLop.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhanLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.btnPhanLop.Location = new System.Drawing.Point(1272, 23);
-            this.btnPhanLop.Name = "btnPhanLop";
-            this.btnPhanLop.Size = new System.Drawing.Size(154, 67);
-            this.btnPhanLop.TabIndex = 81;
-            this.btnPhanLop.Text = "Phân lớp học sinh";
-            this.btnPhanLop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPhanLop.UseVisualStyleBackColor = false;
-            this.btnPhanLop.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmQuanLySinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1460, 824);
-            this.Controls.Add(this.btnPhanLop);
             this.Controls.Add(this.btnLayDS);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label14);
@@ -413,6 +397,5 @@
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvThongTinSV;
-        private System.Windows.Forms.Button btnPhanLop;
     }
 }

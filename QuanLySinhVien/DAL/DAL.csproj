@@ -49,10 +49,8 @@
     <Compile Include="DiemSoDAL.cs" />
     <Compile Include="GiangVienDAL.cs" />
     <Compile Include="SinhVienDAL.cs" />
-    <Compile Include="SinhVien_LopDAL.cs" />
     <Compile Include="LopDAL.cs" />
     <Compile Include="MonHocDAL.cs" />
-    <Compile Include="NamDAL.cs" />
     <Compile Include="NamHocDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GetSQLConnection.cs" />

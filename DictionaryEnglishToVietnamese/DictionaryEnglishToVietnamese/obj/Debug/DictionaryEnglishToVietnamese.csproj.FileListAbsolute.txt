@@ -1,8 +1,0 @@
-C:\Users\Administrator\Desktop\C# Projects\DictionaryEnglishToVietnamese\DictionaryEnglishToVietnamese\bin\Debug\DictionaryEnglishToVietnamese.exe.config
-C:\Users\Administrator\Desktop\C# Projects\DictionaryEnglishToVietnamese\DictionaryEnglishToVietnamese\bin\Debug\DictionaryEnglishToVietnamese.exe
-C:\Users\Administrator\Desktop\C# Projects\DictionaryEnglishToVietnamese\DictionaryEnglishToVietnamese\bin\Debug\DictionaryEnglishToVietnamese.pdb
-C:\Users\Administrator\Desktop\C# Projects\DictionaryEnglishToVietnamese\DictionaryEnglishToVietnamese\obj\Debug\DictionaryEnglishToVietnamese.csproj.AssemblyReference.cache
-C:\Users\Administrator\Desktop\C# Projects\DictionaryEnglishToVietnamese\DictionaryEnglishToVietnamese\obj\Debug\DictionaryEnglishToVietnamese.csproj.SuggestedBindingRedirects.cache
-C:\Users\Administrator\Desktop\C# Projects\DictionaryEnglishToVietnamese\DictionaryEnglishToVietnamese\obj\Debug\DictionaryEnglishToVietnamese.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Desktop\C# Projects\DictionaryEnglishToVietnamese\DictionaryEnglishToVietnamese\obj\Debug\DictionaryEnglishToVietnamese.exe
-C:\Users\Administrator\Desktop\C# Projects\DictionaryEnglishToVietnamese\DictionaryEnglishToVietnamese\obj\Debug\DictionaryEnglishToVietnamese.pdb

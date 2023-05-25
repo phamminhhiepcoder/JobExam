@@ -14,6 +14,7 @@ namespace DTO
         public string email {  get; set; }    
         public string sdt {  get; set; }    
         public int maTaiKhoan {  get; set; }
+        public int maLop {  get; set; }
 
         public override string ToString()
         {

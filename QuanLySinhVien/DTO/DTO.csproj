@@ -49,8 +49,6 @@
     <Compile Include="Diem.cs" />
     <Compile Include="GiangVien.cs" />
     <Compile Include="SinhVien.cs" />
-    <Compile Include="SinhVien_Lop.cs" />
-    <Compile Include="LichSuHoatDong.cs" />
     <Compile Include="Lop.cs" />
     <Compile Include="MonHoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

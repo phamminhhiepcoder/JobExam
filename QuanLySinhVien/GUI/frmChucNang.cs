@@ -39,12 +39,15 @@ namespace GUI
                 btnQuanLyMonHoc.Enabled = false;
                 btnQuanLyTaiKhoanSV.Enabled = false;
                 btnQuanLyTaiKhoanGV.Enabled = false;
+                btnQuanLyGV.Enabled = false;
+                btnQuanLyDiemSo.Enabled = false;
             }
             else if(tenQuyen == "Giáo viên")
             {
                 giangVien = frmDangNhap.layGiangVien();
-                btnQuanLyTaiKhoanSV.Enabled = false;
+                btnQuanLyTaiKhoanGV.Enabled = false;
                 btnQuanLyMonHoc.Enabled = false;
+                btnQuanLyGV.Enabled = false;
             }
             else if(tenQuyen == "Admin")
             {
@@ -164,7 +167,7 @@ namespace GUI
 
         private void btnQuanLyGV_Click(object sender, EventArgs e)
         {
-            Thread thread = new Thread(openFormQLSV);
+            Thread thread = new Thread(openFormQLGV);
             thread.Start();
         }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class TaiKhoanSVDAL
+    public class TaiKhoanHSDAL
     {
         public static bool checkTaiKhoan(TaiKhoan taiKhoan)
         {
@@ -43,8 +43,7 @@ namespace DAL
             DataTable dataTable = new DataTable();
             SqlCommand command = new SqlCommand("select SinhVien.MaSV, TenSV, TaiKhoan.MaTaiKhoan, TenTaiKhoan, MatKhau " +
                 "from SinhVien " +
-                "left join TaiKhoan on SinhVien.MaTaiKhoan = TaiKhoan.MaTaiKhoan " +
-                "left join Quyen on Quyen.MaQuyen = TaiKhoan.MaQuyen ", connection);
+                "left join TaiKhoan on SinhVien.MaTaiKhoan = TaiKhoan.MaTaiKhoan ", connection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dataTable);
             return dataTable;
@@ -56,18 +55,18 @@ namespace DAL
             connection.Open();
             SqlCommand commandCheck = new SqlCommand("select MaTaiKhoan from TaiKhoan where TenTaiKhoan = '" + taiKhoan.tenTaiKhoan + "' and MatKhau = '" + taiKhoan.matKhau + "'", connection);
             int check = Convert.ToInt32(commandCheck.ExecuteScalar());
-            
-                SqlCommand insert = new SqlCommand("insert into TaiKhoan(TenTaiKhoan, MatKhau, MaQuyen) values ('" + taiKhoan.tenTaiKhoan + "', '" + taiKhoan.matKhau + "', 3)", connection);
-                insert.ExecuteNonQuery();
 
-                SqlCommand checkId = new SqlCommand("select scope_identity()", connection);
-                int id = Convert.ToInt32(checkId.ExecuteScalar());
+            SqlCommand insert = new SqlCommand("insert into TaiKhoan(TenTaiKhoan, MatKhau, MaQuyen) values ('" + taiKhoan.tenTaiKhoan + "', '" + taiKhoan.matKhau + "', 3)", connection);
+            insert.ExecuteNonQuery();
 
-                SqlCommand update = new SqlCommand("update SinhVien set MaTaiKhoan = " + id + " where MaSV = " + SinhVien.maSV, connection);
-                update.ExecuteNonQuery();
-                
-                return true;
-            
+            SqlCommand checkId = new SqlCommand("select scope_identity()", connection);
+            int id = Convert.ToInt32(checkId.ExecuteScalar());
+
+            SqlCommand update = new SqlCommand("update SinhVien set MaTaiKhoan = " + id + " where MaSV = " + SinhVien.maSV, connection);
+            update.ExecuteNonQuery();
+
+            return true;
+
         }
         public static bool xoaTaiKhoan(TaiKhoan taiKhoan, SinhVien SinhVien)
         {
@@ -75,16 +74,19 @@ namespace DAL
             connection.Open();
             SqlCommand commandCheck = new SqlCommand("select MaTaiKhoan from TaiKhoan where TenTaiKhoan = '" + taiKhoan.tenTaiKhoan + "' and MatKhau = '" + taiKhoan.matKhau + "'", connection);
             int check = Convert.ToInt32(commandCheck.ExecuteScalar());
-            
-                SqlCommand update = new SqlCommand("update SinhVien set MaTaiKhoan = null where MaSV = " + SinhVien.maSV, connection);
-                update.ExecuteNonQuery();
 
-                SqlCommand command = new SqlCommand("delete TaiKhoan where MaTaiKhoan = " + check, connection);
-                command.ExecuteNonQuery();
-                return true;
-            
+            SqlCommand update = new SqlCommand("update SinhVien set MaTaiKhoan = null where MaSV = " + SinhVien.maSV, connection);
+            update.ExecuteNonQuery();
+
+            SqlCommand command = new SqlCommand("delete TaiKhoan where MaTaiKhoan = " + check, connection);
+            command.ExecuteNonQuery();
+            return true;
+
         }
-       
+        public static bool bctkTaiKhoanHS()
+        {
+            return BaoCaoThongKeDAL.baoCaoThongKeTaiKhoanSV(" Tài Khoản Học Sinh", layDanhSach());
+        }
 
     }
 }

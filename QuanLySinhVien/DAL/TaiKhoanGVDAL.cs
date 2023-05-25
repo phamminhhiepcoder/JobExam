@@ -86,7 +86,7 @@ namespace DAL
         }
         public static bool bctkTaiKhoanGV()
         {
-            return BaoCaoThongKeDAL.baoCaoThongKeTaiKhoanGV(" Tài Khoản Giáo Viên", layDanhSach());
+            return BaoCaoThongKeDAL.baoCaoThongKeTaiKhoanGV("Tài Khoản Giảng Viên", layDanhSach());
         }
 
     }

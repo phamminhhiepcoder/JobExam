@@ -35,12 +35,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.cboTenMon = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cboKyHoc = new System.Windows.Forms.ComboBox();
-            this.cboNamHoc = new System.Windows.Forms.ComboBox();
             this.txtDiemMieng = new System.Windows.Forms.TextBox();
             this.cboMonFilter = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,11 +61,11 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cboNamFilter = new System.Windows.Forms.ComboBox();
-            this.cboKiFilter = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.btnLayDSTheoNam = new System.Windows.Forms.Button();
+            this.cboLopFilter = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboLop = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnLayDS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinDiemSo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,7 +129,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(471, 59);
+            this.label7.Location = new System.Drawing.Point(488, 116);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 16);
             this.label7.TabIndex = 7;
@@ -150,17 +146,6 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Điểm miệng: ";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(470, 181);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 16);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Kỳ học: ";
-            // 
             // txtMaSV
             // 
             this.txtMaSV.Location = new System.Drawing.Point(158, 44);
@@ -172,43 +157,10 @@
             // cboTenMon
             // 
             this.cboTenMon.FormattingEnabled = true;
-            this.cboTenMon.Location = new System.Drawing.Point(566, 55);
+            this.cboTenMon.Location = new System.Drawing.Point(583, 112);
             this.cboTenMon.Name = "cboTenMon";
             this.cboTenMon.Size = new System.Drawing.Size(152, 21);
             this.cboTenMon.TabIndex = 12;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(471, 123);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 16);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Năm học: ";
-            // 
-            // cboKyHoc
-            // 
-            this.cboKyHoc.FormattingEnabled = true;
-            this.cboKyHoc.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.cboKyHoc.Location = new System.Drawing.Point(566, 181);
-            this.cboKyHoc.Name = "cboKyHoc";
-            this.cboKyHoc.Size = new System.Drawing.Size(108, 21);
-            this.cboKyHoc.TabIndex = 14;
-            this.cboKyHoc.SelectedValueChanged += new System.EventHandler(this.cboKyHoc_SelectedValueChanged);
-            // 
-            // cboNamHoc
-            // 
-            this.cboNamHoc.FormattingEnabled = true;
-            this.cboNamHoc.Items.AddRange(new object[] {
-            ""});
-            this.cboNamHoc.Location = new System.Drawing.Point(566, 122);
-            this.cboNamHoc.Name = "cboNamHoc";
-            this.cboNamHoc.Size = new System.Drawing.Size(190, 21);
-            this.cboNamHoc.TabIndex = 15;
             // 
             // txtDiemMieng
             // 
@@ -252,7 +204,7 @@
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(146)))), ((int)(((byte)(89)))));
-            this.btnReset.Location = new System.Drawing.Point(786, 343);
+            this.btnReset.Location = new System.Drawing.Point(772, 336);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(154, 42);
             this.btnReset.TabIndex = 28;
@@ -267,7 +219,7 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnSua.Location = new System.Drawing.Point(317, 340);
+            this.btnSua.Location = new System.Drawing.Point(303, 333);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(154, 42);
             this.btnSua.TabIndex = 29;
@@ -282,7 +234,7 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
-            this.btnXoa.Location = new System.Drawing.Point(553, 343);
+            this.btnXoa.Location = new System.Drawing.Point(539, 336);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(154, 42);
             this.btnXoa.TabIndex = 30;
@@ -297,7 +249,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.btnThem.Location = new System.Drawing.Point(56, 340);
+            this.btnThem.Location = new System.Drawing.Point(42, 333);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(154, 42);
             this.btnThem.TabIndex = 31;
@@ -419,7 +371,7 @@
             this.cboTenSVFilter.Name = "cboTenSVFilter";
             this.cboTenSVFilter.Size = new System.Drawing.Size(155, 21);
             this.cboTenSVFilter.TabIndex = 50;
-            this.cboTenSVFilter.SelectedValueChanged += new System.EventHandler(this.cboTenHSFilter_SelectedValueChanged);
+            this.cboTenSVFilter.SelectedValueChanged += new System.EventHandler(this.cboTenSVFilter_SelectedValueChanged);
             // 
             // cboMaSVFilter
             // 
@@ -464,58 +416,61 @@
             this.textBox1.Text = "Công thức: ĐTK = ((Điểm miệng + Điểm 15p) + (Điểm45 * 2) + (Điểm giữa kì + Điểm c" +
     "uối kì) * 3)/10";
             // 
-            // cboNamFilter
+            // cboLopFilter
             // 
-            this.cboNamFilter.FormattingEnabled = true;
-            this.cboNamFilter.Location = new System.Drawing.Point(1061, 326);
-            this.cboNamFilter.Name = "cboNamFilter";
-            this.cboNamFilter.Size = new System.Drawing.Size(190, 21);
-            this.cboNamFilter.TabIndex = 55;
-            this.cboNamFilter.SelectedValueChanged += new System.EventHandler(this.cboNamFilter_SelectedValueChanged);
+            this.cboLopFilter.Enabled = false;
+            this.cboLopFilter.FormattingEnabled = true;
+            this.cboLopFilter.Location = new System.Drawing.Point(1178, 333);
+            this.cboLopFilter.Name = "cboLopFilter";
+            this.cboLopFilter.Size = new System.Drawing.Size(155, 21);
+            this.cboLopFilter.TabIndex = 58;
+            this.cboLopFilter.SelectedValueChanged += new System.EventHandler(this.cboLopFilter_SelectedValueChanged);
             // 
-            // cboKiFilter
+            // label2
             // 
-            this.cboKiFilter.FormattingEnabled = true;
-            this.cboKiFilter.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.cboKiFilter.Location = new System.Drawing.Point(1325, 327);
-            this.cboKiFilter.Name = "cboKiFilter";
-            this.cboKiFilter.Size = new System.Drawing.Size(108, 21);
-            this.cboKiFilter.TabIndex = 54;
-            this.cboKiFilter.SelectedValueChanged += new System.EventHandler(this.cboKiFilter_SelectedValueChanged);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(1077, 334);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 16);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "Lớp:";
             // 
-            // label12
+            // cboLop
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(978, 326);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 16);
-            this.label12.TabIndex = 53;
-            this.label12.Text = "Năm học: ";
+            this.cboLop.Enabled = false;
+            this.cboLop.FormattingEnabled = true;
+            this.cboLop.Location = new System.Drawing.Point(137, 187);
+            this.cboLop.Name = "cboLop";
+            this.cboLop.Size = new System.Drawing.Size(155, 21);
+            this.cboLop.TabIndex = 60;
             // 
-            // label22
+            // label6
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(1265, 327);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(53, 16);
-            this.label22.TabIndex = 52;
-            this.label22.Text = "Kỳ học: ";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(36, 188);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 16);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "Lớp:";
             // 
-            // btnLayDSTheoNam
+            // btnLayDS
             // 
-            this.btnLayDSTheoNam.Location = new System.Drawing.Point(36, 447);
-            this.btnLayDSTheoNam.Name = "btnLayDSTheoNam";
-            this.btnLayDSTheoNam.Size = new System.Drawing.Size(114, 51);
-            this.btnLayDSTheoNam.TabIndex = 56;
-            this.btnLayDSTheoNam.Text = "Lấy danh sách toàn bộ sinh viên theo năm";
-            this.btnLayDSTheoNam.UseVisualStyleBackColor = true;
-            this.btnLayDSTheoNam.Click += new System.EventHandler(this.btnLayDSTheoNam_Click);
+            this.btnLayDS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnLayDS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLayDS.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLayDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.btnLayDS.Location = new System.Drawing.Point(37, 443);
+            this.btnLayDS.Name = "btnLayDS";
+            this.btnLayDS.Size = new System.Drawing.Size(154, 60);
+            this.btnLayDS.TabIndex = 61;
+            this.btnLayDS.Text = "LẤY DANH SÁCH SINH VIÊN";
+            this.btnLayDS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLayDS.UseVisualStyleBackColor = false;
+            this.btnLayDS.Click += new System.EventHandler(this.btnLayDS_Click);
             // 
             // frmQuanLyDiemSo
             // 
@@ -523,11 +478,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1473, 847);
-            this.Controls.Add(this.btnLayDSTheoNam);
-            this.Controls.Add(this.cboNamFilter);
-            this.Controls.Add(this.cboKiFilter);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label22);
+            this.Controls.Add(this.btnLayDS);
+            this.Controls.Add(this.cboLop);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cboLopFilter);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cboTenSVFilter);
             this.Controls.Add(this.cboMaSVFilter);
@@ -552,12 +507,8 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cboMonFilter);
             this.Controls.Add(this.txtDiemMieng);
-            this.Controls.Add(this.cboNamHoc);
-            this.Controls.Add(this.cboKyHoc);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.cboTenMon);
             this.Controls.Add(this.txtMaSV);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -585,12 +536,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.ComboBox cboTenMon;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cboKyHoc;
-        private System.Windows.Forms.ComboBox cboNamHoc;
         private System.Windows.Forms.TextBox txtDiemMieng;
         private System.Windows.Forms.ComboBox cboMonFilter;
         private System.Windows.Forms.Label label11;
@@ -615,10 +562,10 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox cboNamFilter;
-        private System.Windows.Forms.ComboBox cboKiFilter;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button btnLayDSTheoNam;
+        private System.Windows.Forms.ComboBox cboLopFilter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboLop;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnLayDS;
     }
 }

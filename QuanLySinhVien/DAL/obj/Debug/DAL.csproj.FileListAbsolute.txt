@@ -29,3 +29,12 @@ C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DAL\obj\Debug\DAL.cspr
 C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DAL\obj\Debug\DAL.dll
 C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DAL\obj\Debug\DAL.pdb
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DAL\bin\Debug\DAL.dll
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DAL\bin\Debug\DAL.pdb
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DAL\bin\Debug\DTO.dll
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DAL\bin\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DAL\obj\Debug\DAL.dll
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DAL\obj\Debug\DAL.pdb

@@ -1,0 +1,11 @@
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\bin\Debug\DictionaryEng.exe.config
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\bin\Debug\DictionaryEng.exe
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\bin\Debug\DictionaryEng.pdb
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\obj\Debug\DictionaryEng.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\obj\Debug\DictionaryEng.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\obj\Debug\DictionaryEng.Properties.Resources.resources
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\obj\Debug\DictionaryEng.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\obj\Debug\DictionaryEng.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\obj\Debug\DictionaryEng.exe
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\obj\Debug\DictionaryEng.pdb
+C:\Users\Administrator\Desktop\C# Projects\DictionaryEng\DictionaryEng\obj\Debug\DictionaryEng.frmTuDien.resources

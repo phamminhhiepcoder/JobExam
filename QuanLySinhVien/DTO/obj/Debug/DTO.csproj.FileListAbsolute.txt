@@ -22,3 +22,9 @@ C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\obj\Debug\DTO.cspr
 C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\obj\Debug\DTO.dll
 C:\Users\Administrator\Desktop\C# Projects\QuanLySinhVien\DTO\obj\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DTO\bin\Debug\DTO.dll
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DTO\bin\Debug\DTO.pdb
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DTO\obj\Debug\DTO.dll
+C:\Users\Administrator\Desktop\C# Projects\JobExam\QuanLySinhVien\DTO\obj\Debug\DTO.pdb

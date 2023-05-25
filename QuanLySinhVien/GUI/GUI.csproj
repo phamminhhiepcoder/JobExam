@@ -69,12 +69,6 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhanLopSV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPhanLopSV.Designer.cs">
-      <DependentUpon>frmPhanLopSV.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmQuanLyDiemSo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,17 +87,17 @@
     <Compile Include="frmQuanLySinhVien.Designer.cs">
       <DependentUpon>frmQuanLySinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyTaiKhoanSV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQuanLyTaiKhoanSV.Designer.cs">
-      <DependentUpon>frmQuanLyTaiKhoanSV.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmQuanLyTaiKhoanGV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQuanLyTaiKhoanGV.Designer.cs">
       <DependentUpon>frmQuanLyTaiKhoanGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyTaiKhoanSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyTaiKhoanSV.Designer.cs">
+      <DependentUpon>frmQuanLyTaiKhoanSV.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongTinMonHoc.cs">
       <SubType>Form</SubType>
@@ -122,9 +116,6 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhanLopSV.resx">
-      <DependentUpon>frmPhanLopSV.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyDiemSo.resx">
       <DependentUpon>frmQuanLyDiemSo.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,11 +125,11 @@
     <EmbeddedResource Include="frmQuanLySinhVien.resx">
       <DependentUpon>frmQuanLySinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyTaiKhoanSV.resx">
-      <DependentUpon>frmQuanLyTaiKhoanSV.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyTaiKhoanGV.resx">
       <DependentUpon>frmQuanLyTaiKhoanGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyTaiKhoanSV.resx">
+      <DependentUpon>frmQuanLyTaiKhoanSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinMonHoc.resx">
       <DependentUpon>frmThongTinMonHoc.cs</DependentUpon>

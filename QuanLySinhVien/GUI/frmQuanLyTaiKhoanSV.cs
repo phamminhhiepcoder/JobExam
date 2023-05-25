@@ -21,7 +21,7 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if(txtMaSV.Text == "" || txtTenSV.Text == "" || txtTenTaiKhoan.Text == "" || txtMatKhau.Text == "")
+            if (txtMaSV.Text == "" || txtTenSV.Text == "" ||  txtTenTaiKhoan.Text == "" || txtMatKhau.Text == "")
             {
                 MessageBox.Show("Bạn nhập thiếu!");
             }
@@ -31,13 +31,13 @@ namespace GUI
                 taiKhoan.tenTaiKhoan = txtTenTaiKhoan.Text;
                 taiKhoan.matKhau = txtMatKhau.Text;
 
-                SinhVien SinhVien = new SinhVien();
-                SinhVien.maSV = Convert.ToInt32(txtMaSV.Text);
-                SinhVien.tenSV = txtTenSV.Text;
+                SinhVien sinhVien = new SinhVien();
+                sinhVien.maSV = Convert.ToInt32(txtMaSV.Text);
+                sinhVien.tenSV = txtTenSV.Text;
 
-                if(TaiKhoanSVDAL.capNhatTaiKhoan(taiKhoan, SinhVien))
+                if (TaiKhoanHSDAL.capNhatTaiKhoan(taiKhoan, sinhVien))
                 {
-                    dgvTaiKhoanSV.DataSource = TaiKhoanSVDAL.layDanhSach();
+                    dgvTaiKhoanSV.DataSource = TaiKhoanHSDAL.layDanhSach();
 
                 }
                 else
@@ -78,9 +78,9 @@ namespace GUI
                 SinhVien.maSV = Convert.ToInt32(txtMaSV.Text);
                 SinhVien.tenSV = txtTenSV.Text;
 
-                if (TaiKhoanSVDAL.xoaTaiKhoan(taiKhoan, SinhVien))
+                if (TaiKhoanHSDAL.xoaTaiKhoan(taiKhoan, SinhVien))
                 {
-            dgvTaiKhoanSV.DataSource = TaiKhoanSVDAL.layDanhSach();
+                    dgvTaiKhoanSV.DataSource = TaiKhoanHSDAL.layDanhSach();
 
                 }
                 else
@@ -92,12 +92,15 @@ namespace GUI
 
         private void btnLayDS_Click(object sender, EventArgs e)
         {
-           
+            if(TaiKhoanHSDAL.bctkTaiKhoanHS())
+            {
+
+            }
         }
 
         private void frmQuanLyTaiKhoan_Load(object sender, EventArgs e)
         {
-            dgvTaiKhoanSV.DataSource = TaiKhoanSVDAL.layDanhSach();
+            dgvTaiKhoanSV.DataSource = TaiKhoanHSDAL.layDanhSach();
         }
 
         private void dgvTaiKhoanSV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -107,8 +110,8 @@ namespace GUI
             {
                 txtMaSV.Text = dgvTaiKhoanSV.Rows[index].Cells[0].Value.ToString();
                 txtTenSV.Text = dgvTaiKhoanSV.Rows[index].Cells[1].Value.ToString();
-                txtTenTaiKhoan.Text = dgvTaiKhoanSV.Rows[index].Cells[4].Value.ToString();
-                txtMatKhau.Text = dgvTaiKhoanSV.Rows[index].Cells[5].Value.ToString();
+                txtTenTaiKhoan.Text = dgvTaiKhoanSV.Rows[index].Cells[3].Value.ToString();
+                txtMatKhau.Text = dgvTaiKhoanSV.Rows[index].Cells[4].Value.ToString();
             }
         }
     }

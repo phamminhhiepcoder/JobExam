@@ -19,8 +19,6 @@ namespace GUI
         {
             InitializeComponent();
         }
-
-        static List<string> listNam = NamDAL.layNam();
         static List<string> listMon = MonHocDAL.layTenCacMonHoc();
         static GiangVien giangVien = frmDangNhap.layGiangVien();
         
@@ -31,11 +29,11 @@ namespace GUI
                 cboMonFilter.Items.Add(s);
                 cboTenMon.Items.Add(s); 
             }
-           
-           foreach(string s in listNam)
+            List<string> list = LopDAL.getAllTenLop();
+            foreach(string s in list)
             {
-                cboNamFilter.Items.Add(s);
-                cboNamHoc.Items.Add(s);
+                cboLopFilter.Items.Add(s);
+                cboLop.Items.Add(s);
             }
         }
 
@@ -55,8 +53,6 @@ namespace GUI
                 txtMaSV.Text = dgvThongTinDiemSo.Rows[index].Cells[0].Value.ToString();
                 txtTenSV.Text = dgvThongTinDiemSo.Rows[index].Cells[1].Value.ToString();
                 cboTenMon.Text = dgvThongTinDiemSo.Rows[index].Cells[3].Value.ToString();
-                cboKyHoc.Text = dgvThongTinDiemSo.Rows[index].Cells[4].Value.ToString();
-                cboNamHoc.Text = dgvThongTinDiemSo.Rows[index].Cells[5].Value.ToString();
                 txtDiemMieng.Text = dgvThongTinDiemSo.Rows[index].Cells[6].Value.ToString();
                 txtDiem15Phut.Text = dgvThongTinDiemSo.Rows[index].Cells[7].Value.ToString();
                 txtDiem45Phut.Text = dgvThongTinDiemSo.Rows[index].Cells[8].Value.ToString();
@@ -68,7 +64,7 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaSV.Text == "" || cboKyHoc.Text == "" || cboTenMon.Text == "" || cboNamHoc.Text == "" || txtDiemMieng.Text == "" || txtDiem15Phut.Text == "" || txtDiem45Phut.Text == "" ||
+            if (txtMaSV.Text == "" || cboTenMon.Text == "" || txtDiemMieng.Text == "" || txtDiem15Phut.Text == "" || txtDiem45Phut.Text == "" ||
                 txtDiemGiuaKi.Text == "" || txtDiemCuoiKi.Text == "" || txtDiemTongKet.Text == "")
             {
                 MessageBox.Show("Bạn nhập thiếu!");
@@ -79,8 +75,6 @@ namespace GUI
                 chiTietDiem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
                 chiTietDiem.maGV = giangVien.maGV;
                 chiTietDiem.maHS = Convert.ToInt32(txtMaSV.Text);
-                chiTietDiem.maHK = Convert.ToInt32(cboKyHoc.Text);
-                chiTietDiem.maNam = NamDAL.layMaTheoTen(cboNamHoc.Text);
 
                 Diem diem = new Diem();
                 diem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
@@ -92,14 +86,14 @@ namespace GUI
                 diem.diemTongKet = float.Parse(txtDiemTongKet.Text);
                 if (DiemSoDAL.themDiemSo(diem, chiTietDiem))
                 {
-                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoNamHoc(cboNamHoc.Text);
+                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoLop(cboLop.Text);
                 }
             }
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (txtMaSV.Text == "" || cboKyHoc.Text == "" || cboTenMon.Text == "" || cboNamHoc.Text == "" || txtDiemMieng.Text == "" || txtDiem15Phut.Text == "" || txtDiem45Phut.Text == "" ||
+            if (txtMaSV.Text == "" ||  cboTenMon.Text == "" || txtDiemMieng.Text == "" || txtDiem15Phut.Text == "" || txtDiem45Phut.Text == "" ||
                 txtDiemGiuaKi.Text == "" || txtDiemCuoiKi.Text == "" || txtDiemTongKet.Text == "")
             {
                 MessageBox.Show("Bạn nhập thiếu!");
@@ -110,8 +104,6 @@ namespace GUI
                 chiTietDiem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
                 chiTietDiem.maGV = giangVien.maGV;
                 chiTietDiem.maHS = Convert.ToInt32(txtMaSV.Text);
-                chiTietDiem.maHK = Convert.ToInt32(cboKyHoc.Text);
-                chiTietDiem.maNam = NamDAL.layMaTheoTen(cboNamHoc.Text);
 
                 Diem diem = new Diem();
                 diem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
@@ -124,8 +116,7 @@ namespace GUI
 
                 if (DiemSoDAL.capNhatDiemSo(chiTietDiem, diem))
                 {
-                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoNamHoc(cboNamHoc.Text);
-
+                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoLop(cboLopFilter.Text);
                 }
             }
 
@@ -133,7 +124,7 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (txtMaSV.Text == "" || cboKyHoc.Text == "" || cboTenMon.Text == "" || cboNamHoc.Text == "" || txtDiemMieng.Text == "" || txtDiem15Phut.Text == "" || txtDiem45Phut.Text == "" ||
+            if (txtMaSV.Text == "" || cboTenMon.Text == "" || txtDiemMieng.Text == "" || txtDiem15Phut.Text == "" || txtDiem45Phut.Text == "" ||
                  txtDiemGiuaKi.Text == "" || txtDiemCuoiKi.Text == "" || txtDiemTongKet.Text == "")
             {
                 MessageBox.Show("Bạn nhập thiếu!");
@@ -143,8 +134,6 @@ namespace GUI
                 ChiTietDiem chiTietDiem = new ChiTietDiem();
                 chiTietDiem.maHS = Convert.ToInt32(txtMaSV.Text);
                 chiTietDiem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
-                chiTietDiem.maNam = NamDAL.layMaTheoTen(cboNamHoc.Text);
-                chiTietDiem.maHK = Convert.ToInt32(cboKyHoc.Text);
 
                 Diem diem = new Diem();
                 diem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
@@ -156,45 +145,24 @@ namespace GUI
                 diem.diemTongKet = float.Parse(txtDiemTongKet.Text);
                 if (DiemSoDAL.xoaDiemSo(chiTietDiem, diem))
                 {
-                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoNamHoc(cboNamHoc.Text);
+                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoLop(cboLopFilter.Text);
                 }
             }
 
         }
 
-        private void cboKiFilter_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if(cboNamFilter.Text != "")
-            {
-                if(cboKiFilter.Text != "")
-                {
-                    cboTenSVFilter.Enabled = true;
-                    List<string> list = SinhVienDAL.laySVTheoNamVaKi(cboNamFilter.Text, Convert.ToInt32(cboKiFilter.Text));
-                    foreach(string s in list)
-                    {
-                        cboTenSVFilter.Items.Add(s);
-                    }
-                    int ki = Convert.ToInt32(cboKiFilter.Text);
-                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoNamHocVaKiHoc(cboNamFilter.Text, ki);
-                }
-            }
-            else
-            {
 
-            }
-        }
-
-        private void cboTenHSFilter_SelectedValueChanged(object sender, EventArgs e)
+        private void cboTenSVFilter_SelectedValueChanged(object sender, EventArgs e)
         {
             if(cboTenSVFilter.Text != "")
             {
-                List<int> listMa = SinhVien_LopDAL.layMaSVTheoKiNamVaTen(cboTenSVFilter.Text, Convert.ToInt32(cboKiFilter.Text), cboNamFilter.Text);
+                List<int> listMa = SinhVienDAL.layMaHSTheoTen(cboTenSVFilter.Text);
                 foreach(int s in listMa)
                 {
                     cboMaSVFilter.Items.Add(s);
                 }
                 cboMaSVFilter.Enabled = true;
-                dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoNamKiVaTenHS(cboNamFilter.Text, Convert.ToInt32(cboKiFilter.Text), cboTenSVFilter.Text);
+                dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoTenHS(cboTenSVFilter.Text);
             }
         }
 
@@ -231,22 +199,13 @@ namespace GUI
             }
         }
 
-        private void cboNamFilter_SelectedValueChanged(object sender, EventArgs e)
-        {
-            btnLayDSTheoNam.Enabled = true;
-            if(cboNamFilter.Text != "")
-            {
-                dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoNamHoc(cboNamFilter.Text);
-            }
-
-        }
 
         private void cboMaHSFilter_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cboMaSVFilter.Text != "")
             {
                 int ma = Convert.ToInt32(cboMaSVFilter.Text);
-                dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoNamKiTenHSVaMaHS(cboNamFilter.Text, Convert.ToInt32(cboKiFilter.Text), cboTenSVFilter.Text, ma);
+                dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoTenHSVaMaHS(cboTenSVFilter.Text, ma);
             }
         }
 
@@ -258,41 +217,19 @@ namespace GUI
             }
         }
 
-        private void cboKyHoc_SelectedValueChanged(object sender, EventArgs e)
+        private void cboLopFilter_SelectedValueChanged(object sender, EventArgs e)
         {
-            try
+            if(cboLopFilter.Text != "")
             {
-                if (cboNamHoc.Text != "")
-                {
-                    if (cboKyHoc.Text != "")
-                    {
-                        if (txtMaSV.Text != "")
-                        {
-                            List<string> list = SinhVienDAL.laySVTheoNamVaKi(cboNamFilter.Text, Convert.ToInt32(cboKiFilter.Text));
-                            foreach (string s in list)
-                            {
-                                cboTenSVFilter.Items.Add(s);
-                            }
-                            cboTenSVFilter.Enabled = true;
-                        }
-                    }
-                }
-            
-            }catch(Exception ex)
-            {
-
+                dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoLop(cboLopFilter.Text);
             }
-
         }
 
-        private void btnLayDSTheoNam_Click(object sender, EventArgs e)
+        private void btnLayDS_Click(object sender, EventArgs e)
         {
-            if(cboNamFilter.Text != "")
+           if(SinhVienDAL.baoCaoThongKeSV())
             {
-                if (SinhVienDAL.bctkSinhVienTheoNam(cboNamFilter.Text))
-                {
 
-                }
             }
         }
     }

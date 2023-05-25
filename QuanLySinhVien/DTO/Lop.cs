@@ -10,8 +10,7 @@ namespace DTO
     {
         public string maLop { get; set ; }
         public string tenLop { get; set ; }
-        public int maHK { get; set; }
-        public int maNam { get; set; }
+        public int maKhoa { get; set ; }
 
     }
 }

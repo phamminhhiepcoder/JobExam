@@ -146,9 +146,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(494, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(457, 33);
+            this.label7.Size = new System.Drawing.Size(459, 33);
             this.label7.TabIndex = 91;
-            this.label7.Text = "QUẢN LÝ TÀI KHOẢN HỌC SINH";
+            this.label7.Text = "QUẢN LÝ TÀI KHOẢN SINH VIÊN";
             // 
             // btnReset
             // 

@@ -19,22 +19,27 @@ namespace GUI
         {
             InitializeComponent();
         }
+        void load()
+        {
+            dgvThongTinSV.DataSource = SinhVienDAL.layThongTinCacSV();
+            foreach(string s in listLop)
+            {
+                cboLop.Items.Add(s);
+                cboLopFilter.Items.Add(s);
+            }
+            cboLopFilter.Items.Add("Toàn bộ");
+        }
+        static List<string> listLop = LopDAL.getAllTenLop();
         private void frmQuanLySinhVien_Load(object sender, EventArgs e)
         {
-           
+            load();
         }
-
-        private void cboNienKhoaFilter_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (cboLopFilter.Text != "")
-            {
-                dgvThongTinSV.DataSource = SinhVienDAL.layDanSVachSVTheoNienKhoa(cboLopFilter.Text);
-                btnLayDS.Enabled = true;
-            }
-        }
-
         private void btnLayDS_Click(object sender, EventArgs e)
         {
+            if(SinhVienDAL.baoCaoThongKeSV())
+            {
+
+            }
         }
 
         private void dgvThongTinSV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -52,7 +57,7 @@ namespace GUI
         }
         public bool checkData()
         {
-            if(txtTenSV.Text == "" || txtEmail.Text == "" || txtDiaChi.Text == "" || txtSdt.Text == "" || cboLop.Text == "")
+            if(txtTenSV.Text == "" || txtEmail.Text == "" || txtDiaChi.Text == "" || txtSdt.Text == "")
             {
                 return false;
             }
@@ -62,14 +67,15 @@ namespace GUI
         {
             if(checkData())
             {
-                SinhVien SinhVien = new SinhVien();
-                SinhVien.tenSV = txtTenSV.Text;
-                SinhVien.email = txtEmail.Text;
-                SinhVien.sdt = txtSdt.Text;
-                SinhVien.diaChi = txtDiaChi.Text;
-                if (SinhVienDAL.themSV(SinhVien))
+                SinhVien sinhVien = new SinhVien();
+                sinhVien.tenSV = txtTenSV.Text;
+                sinhVien.email = txtEmail.Text;
+                sinhVien.sdt = txtSdt.Text;
+                sinhVien.diaChi = txtDiaChi.Text;
+                sinhVien.maLop = LopDAL.layMaLop(cboLop.Text);
+                if (SinhVienDAL.themSV(sinhVien))
                 {
-                    dgvThongTinSV.DataSource = SinhVienDAL.layDanSVachSVTheoNienKhoa(cboLop.Text);
+                    dgvThongTinSV.DataSource = SinhVienDAL.layThongTinCacSVTheoLop(cboLopFilter.Text);
                     cboLopFilter.Text = cboLop.Text;
                 }
             }
@@ -83,15 +89,16 @@ namespace GUI
         {
             if (checkData())
             {
-                SinhVien SinhVien = new SinhVien();
-                SinhVien.maSV = Convert.ToInt32(txtMaSV.Text);
-                SinhVien.tenSV = txtTenSV.Text;
-                SinhVien.email = txtEmail.Text;
-                SinhVien.sdt = txtSdt.Text;
-                SinhVien.diaChi = txtDiaChi.Text;
-                if (SinhVienDAL.capNhatSV(SinhVien))
+                SinhVien sinhVien = new SinhVien();
+                sinhVien.maSV = Convert.ToInt32(txtMaSV.Text);
+                sinhVien.tenSV = txtTenSV.Text;
+                sinhVien.email = txtEmail.Text;
+                sinhVien.sdt = txtSdt.Text;
+                sinhVien.diaChi = txtDiaChi.Text;
+                sinhVien.maLop = LopDAL.layMaLop(cboLop.Text);
+                if (SinhVienDAL.capNhatSV(sinhVien))
                 {
-                    dgvThongTinSV.DataSource = SinhVienDAL.layDanSVachSVTheoNienKhoa(cboLop.Text);
+                    dgvThongTinSV.DataSource = SinhVienDAL.layThongTinCacSV();
                     cboLopFilter.Text = cboLop.Text;
                 }
             }
@@ -107,7 +114,7 @@ namespace GUI
             SinhVien.maSV = Convert.ToInt32(txtMaSV.Text);
             if (SinhVienDAL.xoaSV(SinhVien))
             {
-                dgvThongTinSV.DataSource = SinhVienDAL.layDanSVachSVTheoNienKhoa(cboLop.Text);
+                dgvThongTinSV.DataSource = SinhVienDAL.layThongTinCacSV();
             }
         }
 
@@ -126,14 +133,21 @@ namespace GUI
             }
         }
 
-        void openFormPhanLop()
+        
+      
+        private void cboLopFilter_SelectedValueChanged(object sender, EventArgs e)
         {
-            Application.Run(new frmPhanLopSV());
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Thread thread = new Thread(openFormPhanLop);
-            thread.Start();
+            if(cboLopFilter.Text != "")
+            {
+                if (cboLopFilter.Text == "Toàn bộ")
+                {
+                    dgvThongTinSV.DataSource = SinhVienDAL.layThongTinCacSV();
+                }
+                else
+                {
+                    dgvThongTinSV.DataSource = SinhVienDAL.layThongTinCacSVTheoLop(cboLopFilter.Text);
+                }
+                }
         }
     }
 }
