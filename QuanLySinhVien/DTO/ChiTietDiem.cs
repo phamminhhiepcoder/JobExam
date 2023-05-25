@@ -11,7 +11,7 @@ namespace DTO
         public int maMonHoc { get; set; }
         public int maDiem { get; set; }
         public int maGV { get; set; }
-        public int maHS { get; set; }
+        public int maSV { get; set; }
         public string ghiChu  { get; set; }
     }
 }

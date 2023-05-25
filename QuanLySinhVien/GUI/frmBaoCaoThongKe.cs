@@ -31,11 +31,22 @@ namespace GUI
         {
             if (cboLuaChon.Text == "Thống kê học bạ")
             {
+                if(SinhVienDAL.baoCaoThongKeSV())
+                {
+
+                }
             }
             else if (cboLuaChon.Text == "Thống kê điểm")
             {
-               
+               if(DiemSoDAL.baoCaoThongKeDiem())
+                {
 
+                }
+
+            }
+            else 
+            {
+                MessageBox.Show("Bạn chưa chọn đúng!");
             }
         }
 

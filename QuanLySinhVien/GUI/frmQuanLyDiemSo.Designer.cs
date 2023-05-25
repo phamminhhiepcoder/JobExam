@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvThongTinDiemSo = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -38,7 +36,6 @@
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.cboTenMon = new System.Windows.Forms.ComboBox();
             this.txtDiemMieng = new System.Windows.Forms.TextBox();
-            this.cboMonFilter = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTenSV = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
@@ -56,51 +53,13 @@
             this.btnTinh = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.txtDiemTongKet = new System.Windows.Forms.TextBox();
-            this.cboTenSVFilter = new System.Windows.Forms.ComboBox();
-            this.cboMaSVFilter = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cboLopFilter = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cboLop = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnLayDS = new System.Windows.Forms.Button();
+            this.dgvThongTinDiemSo = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinDiemSo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvThongTinDiemSo
-            // 
-            this.dgvThongTinDiemSo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvThongTinDiemSo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.dgvThongTinDiemSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongTinDiemSo.Location = new System.Drawing.Point(12, 521);
-            this.dgvThongTinDiemSo.Name = "dgvThongTinDiemSo";
-            this.dgvThongTinDiemSo.Size = new System.Drawing.Size(1449, 314);
-            this.dgvThongTinDiemSo.TabIndex = 0;
-            this.dgvThongTinDiemSo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinDiemSo_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1204, 276);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Filter: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1127, 455);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Môn: ";
             // 
             // label4
             // 
@@ -168,16 +127,6 @@
             this.txtDiemMieng.Name = "txtDiemMieng";
             this.txtDiemMieng.Size = new System.Drawing.Size(100, 20);
             this.txtDiemMieng.TabIndex = 16;
-            // 
-            // cboMonFilter
-            // 
-            this.cboMonFilter.Enabled = false;
-            this.cboMonFilter.FormattingEnabled = true;
-            this.cboMonFilter.Location = new System.Drawing.Point(1199, 455);
-            this.cboMonFilter.Name = "cboMonFilter";
-            this.cboMonFilter.Size = new System.Drawing.Size(155, 21);
-            this.cboMonFilter.TabIndex = 18;
-            this.cboMonFilter.SelectedValueChanged += new System.EventHandler(this.cboMonFilter_SelectedValueChanged);
             // 
             // label11
             // 
@@ -363,48 +312,6 @@
             this.txtDiemTongKet.Size = new System.Drawing.Size(100, 20);
             this.txtDiemTongKet.TabIndex = 45;
             // 
-            // cboTenSVFilter
-            // 
-            this.cboTenSVFilter.Enabled = false;
-            this.cboTenSVFilter.FormattingEnabled = true;
-            this.cboTenSVFilter.Location = new System.Drawing.Point(1051, 392);
-            this.cboTenSVFilter.Name = "cboTenSVFilter";
-            this.cboTenSVFilter.Size = new System.Drawing.Size(155, 21);
-            this.cboTenSVFilter.TabIndex = 50;
-            this.cboTenSVFilter.SelectedValueChanged += new System.EventHandler(this.cboTenSVFilter_SelectedValueChanged);
-            // 
-            // cboMaSVFilter
-            // 
-            this.cboMaSVFilter.Enabled = false;
-            this.cboMaSVFilter.FormattingEnabled = true;
-            this.cboMaSVFilter.Location = new System.Drawing.Point(1325, 391);
-            this.cboMaSVFilter.Name = "cboMaSVFilter";
-            this.cboMaSVFilter.Size = new System.Drawing.Size(127, 21);
-            this.cboMaSVFilter.TabIndex = 49;
-            this.cboMaSVFilter.SelectedValueChanged += new System.EventHandler(this.cboMaHSFilter_SelectedValueChanged);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(950, 393);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(89, 16);
-            this.label20.TabIndex = 48;
-            this.label20.Text = "Tên sinh viên:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(1229, 392);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(84, 16);
-            this.label21.TabIndex = 47;
-            this.label21.Text = "Mã sinh viên:";
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(981, 12);
@@ -415,27 +322,6 @@
             this.textBox1.TabIndex = 51;
             this.textBox1.Text = "Công thức: ĐTK = ((Điểm miệng + Điểm 15p) + (Điểm45 * 2) + (Điểm giữa kì + Điểm c" +
     "uối kì) * 3)/10";
-            // 
-            // cboLopFilter
-            // 
-            this.cboLopFilter.Enabled = false;
-            this.cboLopFilter.FormattingEnabled = true;
-            this.cboLopFilter.Location = new System.Drawing.Point(1178, 333);
-            this.cboLopFilter.Name = "cboLopFilter";
-            this.cboLopFilter.Size = new System.Drawing.Size(155, 21);
-            this.cboLopFilter.TabIndex = 58;
-            this.cboLopFilter.SelectedValueChanged += new System.EventHandler(this.cboLopFilter_SelectedValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1077, 334);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 16);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "Lớp:";
             // 
             // cboLop
             // 
@@ -463,7 +349,7 @@
             this.btnLayDS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLayDS.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLayDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.btnLayDS.Location = new System.Drawing.Point(37, 443);
+            this.btnLayDS.Location = new System.Drawing.Point(1293, 324);
             this.btnLayDS.Name = "btnLayDS";
             this.btnLayDS.Size = new System.Drawing.Size(154, 60);
             this.btnLayDS.TabIndex = 61;
@@ -472,22 +358,36 @@
             this.btnLayDS.UseVisualStyleBackColor = false;
             this.btnLayDS.Click += new System.EventHandler(this.btnLayDS_Click);
             // 
+            // dgvThongTinDiemSo
+            // 
+            this.dgvThongTinDiemSo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThongTinDiemSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvThongTinDiemSo.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvThongTinDiemSo.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvThongTinDiemSo.Location = new System.Drawing.Point(12, 434);
+            this.dgvThongTinDiemSo.Name = "dgvThongTinDiemSo";
+            this.dgvThongTinDiemSo.Size = new System.Drawing.Size(1449, 401);
+            this.dgvThongTinDiemSo.TabIndex = 62;
+            this.dgvThongTinDiemSo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinDiemSo_CellClick);
+            // 
             // frmQuanLyDiemSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1473, 847);
+            this.Controls.Add(this.dgvThongTinDiemSo);
             this.Controls.Add(this.btnLayDS);
             this.Controls.Add(this.cboLop);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cboLopFilter);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.cboTenSVFilter);
-            this.Controls.Add(this.cboMaSVFilter);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label21);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtDiemTongKet);
             this.Controls.Add(this.btnTinh);
@@ -505,7 +405,6 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtTenSV);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.cboMonFilter);
             this.Controls.Add(this.txtDiemMieng);
             this.Controls.Add(this.cboTenMon);
             this.Controls.Add(this.txtMaSV);
@@ -513,9 +412,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvThongTinDiemSo);
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Name = "frmQuanLyDiemSo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -528,10 +424,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvThongTinDiemSo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
@@ -539,7 +431,6 @@
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.ComboBox cboTenMon;
         private System.Windows.Forms.TextBox txtDiemMieng;
-        private System.Windows.Forms.ComboBox cboMonFilter;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtTenSV;
         private System.Windows.Forms.Button btnReset;
@@ -557,15 +448,10 @@
         private System.Windows.Forms.Button btnTinh;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtDiemTongKet;
-        private System.Windows.Forms.ComboBox cboTenSVFilter;
-        private System.Windows.Forms.ComboBox cboMaSVFilter;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox cboLopFilter;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboLop;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnLayDS;
+        private System.Windows.Forms.DataGridView dgvThongTinDiemSo;
     }
 }

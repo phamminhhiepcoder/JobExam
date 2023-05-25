@@ -83,21 +83,6 @@ namespace DAL
 
 
 
-        public static List<int> layMaHSTheoTen(string ten)
-        {
-            SqlConnection connection = GetSQLConnection.getConnection();
-            connection.Open();
-
-            List<int> list = new List<int>();
-            SqlCommand sqlCommand = new SqlCommand("select MaSV from SinhVien where TenSV = N'" + ten + "'", connection);
-            SqlDataReader reader = sqlCommand.ExecuteReader();
-            while (reader.Read())
-            {
-                list.Add(reader.GetInt32(0));
-            }
-            return list;
-        }
-
         public static bool themSV(SinhVien SinhVien)
         {
 
@@ -132,17 +117,6 @@ namespace DAL
             return true;
 
         }
-
-        public static string layTenTheoMa(int ma)
-        {
-            SqlConnection connection = GetSQLConnection.getConnection();
-            connection.Open();
-
-            SqlCommand command = new SqlCommand("select TenSV from SinhVien where MaSV = " + ma, connection);
-            string ten = (string)command.ExecuteScalar();
-            return ten;
-        }
-
        
     }
 }

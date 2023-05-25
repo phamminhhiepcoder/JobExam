@@ -24,25 +24,11 @@ namespace GUI
         
         private void frmQuanLyDiemSo_Load(object sender, EventArgs e)
         {
-            foreach(string s in listMon)
+            dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSo();
+            foreach (string s in listMon)
             {
-                cboMonFilter.Items.Add(s);
                 cboTenMon.Items.Add(s); 
             }
-            List<string> list = LopDAL.getAllTenLop();
-            foreach(string s in list)
-            {
-                cboLopFilter.Items.Add(s);
-                cboLop.Items.Add(s);
-            }
-        }
-
-      
-
-        private void cboMonFilter_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-
         }
 
         private void dgvThongTinDiemSo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -52,13 +38,14 @@ namespace GUI
             {
                 txtMaSV.Text = dgvThongTinDiemSo.Rows[index].Cells[0].Value.ToString();
                 txtTenSV.Text = dgvThongTinDiemSo.Rows[index].Cells[1].Value.ToString();
+                cboLop.Text = dgvThongTinDiemSo.Rows[index].Cells[2].Value.ToString();
                 cboTenMon.Text = dgvThongTinDiemSo.Rows[index].Cells[3].Value.ToString();
-                txtDiemMieng.Text = dgvThongTinDiemSo.Rows[index].Cells[6].Value.ToString();
-                txtDiem15Phut.Text = dgvThongTinDiemSo.Rows[index].Cells[7].Value.ToString();
-                txtDiem45Phut.Text = dgvThongTinDiemSo.Rows[index].Cells[8].Value.ToString();
-                txtDiemGiuaKi.Text = dgvThongTinDiemSo.Rows[index].Cells[9].Value.ToString();
-                txtDiemCuoiKi.Text = dgvThongTinDiemSo.Rows[index].Cells[10].Value.ToString();
-                txtDiemTongKet.Text = dgvThongTinDiemSo.Rows[index].Cells[11].Value.ToString();
+                txtDiemMieng.Text = dgvThongTinDiemSo.Rows[index].Cells[4].Value.ToString();
+                txtDiem15Phut.Text = dgvThongTinDiemSo.Rows[index].Cells[5].Value.ToString();
+                txtDiem45Phut.Text = dgvThongTinDiemSo.Rows[index].Cells[6].Value.ToString();
+                txtDiemGiuaKi.Text = dgvThongTinDiemSo.Rows[index].Cells[7].Value.ToString();
+                txtDiemCuoiKi.Text = dgvThongTinDiemSo.Rows[index].Cells[8].Value.ToString();
+                txtDiemTongKet.Text = dgvThongTinDiemSo.Rows[index].Cells[9].Value.ToString();
             }
         }
 
@@ -74,7 +61,7 @@ namespace GUI
                 ChiTietDiem chiTietDiem = new ChiTietDiem();
                 chiTietDiem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
                 chiTietDiem.maGV = giangVien.maGV;
-                chiTietDiem.maHS = Convert.ToInt32(txtMaSV.Text);
+                chiTietDiem.maSV = Convert.ToInt32(txtMaSV.Text);
 
                 Diem diem = new Diem();
                 diem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
@@ -86,7 +73,7 @@ namespace GUI
                 diem.diemTongKet = float.Parse(txtDiemTongKet.Text);
                 if (DiemSoDAL.themDiemSo(diem, chiTietDiem))
                 {
-                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoLop(cboLop.Text);
+                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSo();
                 }
             }
         }
@@ -103,7 +90,7 @@ namespace GUI
                 ChiTietDiem chiTietDiem = new ChiTietDiem();
                 chiTietDiem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
                 chiTietDiem.maGV = giangVien.maGV;
-                chiTietDiem.maHS = Convert.ToInt32(txtMaSV.Text);
+                chiTietDiem.maSV = Convert.ToInt32(txtMaSV.Text);
 
                 Diem diem = new Diem();
                 diem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
@@ -116,7 +103,7 @@ namespace GUI
 
                 if (DiemSoDAL.capNhatDiemSo(chiTietDiem, diem))
                 {
-                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoLop(cboLopFilter.Text);
+                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSo();
                 }
             }
 
@@ -132,7 +119,7 @@ namespace GUI
             else
             {
                 ChiTietDiem chiTietDiem = new ChiTietDiem();
-                chiTietDiem.maHS = Convert.ToInt32(txtMaSV.Text);
+                chiTietDiem.maSV = Convert.ToInt32(txtMaSV.Text);
                 chiTietDiem.maMonHoc = MonHocDAL.layMaTheoTen(cboTenMon.Text);
 
                 Diem diem = new Diem();
@@ -145,26 +132,14 @@ namespace GUI
                 diem.diemTongKet = float.Parse(txtDiemTongKet.Text);
                 if (DiemSoDAL.xoaDiemSo(chiTietDiem, diem))
                 {
-                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoLop(cboLopFilter.Text);
+                    dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSo();
                 }
             }
 
         }
 
 
-        private void cboTenSVFilter_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if(cboTenSVFilter.Text != "")
-            {
-                List<int> listMa = SinhVienDAL.layMaHSTheoTen(cboTenSVFilter.Text);
-                foreach(int s in listMa)
-                {
-                    cboMaSVFilter.Items.Add(s);
-                }
-                cboMaSVFilter.Enabled = true;
-                dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoTenHS(cboTenSVFilter.Text);
-            }
-        }
+        
 
         private void btnReset_Click_1(object sender, EventArgs e)
         {
@@ -200,30 +175,19 @@ namespace GUI
         }
 
 
-        private void cboMaHSFilter_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (cboMaSVFilter.Text != "")
-            {
-                int ma = Convert.ToInt32(cboMaSVFilter.Text);
-                dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoTenHSVaMaHS(cboTenSVFilter.Text, ma);
-            }
-        }
+       
 
         private void txtMaHS_TextChanged(object sender, EventArgs e)
         {
             if(txtMaSV.Text != "")
             {
                 SinhVien sinhVien = SinhVienDAL.layThongTinSVTheoMa(Convert.ToInt32(txtMaSV.Text));
+                txtTenSV.Text = sinhVien.tenSV;
+                cboLop.Text = LopDAL.layTenLop(sinhVien.maSV);
             }
         }
 
-        private void cboLopFilter_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if(cboLopFilter.Text != "")
-            {
-                dgvThongTinDiemSo.DataSource = DiemSoDAL.layDiemSoTheoLop(cboLopFilter.Text);
-            }
-        }
+      
 
         private void btnLayDS_Click(object sender, EventArgs e)
         {

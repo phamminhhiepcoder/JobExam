@@ -39,15 +39,15 @@ namespace DAL
             int id = Convert.ToInt32(command.ExecuteScalar());
             return id;
         }
-        public static string layTenLop(int maSV, string tenSV)
+        public static string layTenLop(int maSV)
         {
             SqlConnection connection = GetSQLConnection.getConnection();
             connection.Open();
 
             SqlCommand command = new SqlCommand("select TenLop " +
                 "from SinhVien " +
-                "inner join Lop on SinhVien_Lop.MaLop = Lop.MaLop " +
-                "where SinhVien.MaSV = " + maSV + " and TenHS = N'" + tenSV + "'", connection);
+                "inner join Lop on SinhVien.MaLop = Lop.MaLop " +
+                "where SinhVien.MaSV = " + maSV, connection);
             string tenLop = (string)command.ExecuteScalar();
             return tenLop;
         }

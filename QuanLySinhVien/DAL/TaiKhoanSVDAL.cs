@@ -11,31 +11,6 @@ namespace DAL
 {
     public class TaiKhoanHSDAL
     {
-        public static bool checkTaiKhoan(TaiKhoan taiKhoan)
-        {
-            SqlConnection connection = GetSQLConnection.getConnection();
-            connection.Open();
-            SqlCommand command = new SqlCommand("select case when exists (select * from TaiKhoan where TenTaiKhoan = '" + taiKhoan.tenTaiKhoan + "' and MatKhau = '" + taiKhoan.matKhau + "') then 1 else 0 end", connection);
-            int check = Convert.ToInt32(command.ExecuteScalar());
-            if (check == 1) return true;
-            else return false;
-        }
-        public static int layMaQuyen(TaiKhoan taiKhoan)
-        {
-            SqlConnection connection = GetSQLConnection.getConnection();
-            connection.Open();
-            SqlCommand command = new SqlCommand("select MaQuyen from TaiKhoan where TenTaiKhoan = '" + taiKhoan.tenTaiKhoan + "' and MatKhau = '" + taiKhoan.matKhau + "'", connection);
-            int check = Convert.ToInt32(command.ExecuteScalar());
-            return check;
-        }
-        public static int layMaTaiKhoan(TaiKhoan taiKhoan)
-        {
-            SqlConnection connection = GetSQLConnection.getConnection();
-            connection.Open();
-            SqlCommand command = new SqlCommand("select MaTaiKhoan from TaiKhoan where TenTaiKhoan = '" + taiKhoan.tenTaiKhoan + "' and MatKhau = '" + taiKhoan.matKhau + "'", connection);
-            int check = Convert.ToInt32(command.ExecuteScalar());
-            return check;
-        }
         public static DataTable layDanhSach()
         {
             SqlConnection connection = GetSQLConnection.getConnection();

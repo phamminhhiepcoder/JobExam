@@ -178,7 +178,7 @@ namespace DAL
 
         }
 
-        public static bool baoCaoThongKeDiemTheoLop(string content, System.Data.DataTable dataTable)
+        public static bool baoCaoThongKeDiem(string content, System.Data.DataTable dataTable)
         {
                 try
                 {
@@ -214,7 +214,7 @@ namespace DAL
                     oSheet.Name = sheetName;
 
                     // Tạo phần Tiêu đề
-                    Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "H1");
+                    Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "J1");
 
                     head.MergeCells = true;
 
@@ -232,54 +232,67 @@ namespace DAL
 
                     Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
 
-                    cl1.Value2 = "ID điểm số";
+                    cl1.Value2 = "Mã sinh viên";
 
                     cl1.ColumnWidth = 12;
 
                     Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
 
-                    cl2.Value2 = "ID học sinh";
+                    cl2.Value2 = "Tên sinh viên";
 
-                    cl2.ColumnWidth = 21.29;
+                    cl2.ColumnWidth = 31.29;
 
                     Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
 
-                    cl3.Value2 = "Tên học sinh";
-                    cl3.ColumnWidth = 30.29;
+                    cl3.Value2 = "Tên lớp";
+                    cl3.ColumnWidth = 20.29;
 
                     Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
 
-                    cl4.Value2 = "Tên lớp";
+                    cl4.Value2 = "Tên môn học";
 
                     cl4.ColumnWidth = 30;
 
                     Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
 
-                    cl5.Value2 = "Tên môn học";
+                    cl5.Value2 = "Điểm miệng";
 
-                    cl5.ColumnWidth = 23.71;
+                    cl5.ColumnWidth = 15.71;
 
                     Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
 
-                    cl6.Value2 = "Kì học";
+                    cl6.Value2 = "Điểm 15 phút";
 
-                    cl6.ColumnWidth = 10.71;
+                    cl6.ColumnWidth = 15.71;
 
                     Microsoft.Office.Interop.Excel.Range cl7 = oSheet.get_Range("G3", "G3");
 
-                    cl7.Value2 = "Năm học";
+                    cl7.Value2 = "Điểm 45 phút";
 
                     cl7.ColumnWidth = 24;
 
                     Microsoft.Office.Interop.Excel.Range cl8 = oSheet.get_Range("H3", "H3");
 
-                    cl8.Value2 = "Điểm";
+                    cl8.Value2 = "Điểm giữa kỳ";
 
-                    cl8.ColumnWidth = 8.43;
+                    cl8.ColumnWidth = 18.43;
+                    Microsoft.Office.Interop.Excel.Range cl9 = oSheet.get_Range("I3", "I3");
+
+                    cl9.Value2 = "Điểm cuối kỳ";
+
+                    cl9.ColumnWidth = 18.43;
+                    
+                    Microsoft.Office.Interop.Excel.Range cl10 = oSheet.get_Range("J3", "J3");
+
+                    cl10.Value2 = "Điểm tổng kết";
+
+                    cl10.ColumnWidth = 18.43;
+                    
+                    
 
                    
 
-                    Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "H3");
+                    Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "J3");
 
                     rowHead.Font.Bold = true;
 
@@ -984,7 +997,7 @@ namespace DAL
                 oSheet.Name = sheetName;
 
                 // Tạo phần Tiêu đề
-                Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "I1");
+                Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "F1");
 
                 head.MergeCells = true;
 
@@ -1032,31 +1045,15 @@ namespace DAL
 
                 Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
 
-                cl5.Value2 = "Niên khoá";
+                cl6.Value2 = "Tên lớp";
 
-                cl5.ColumnWidth = 23.71;
+                cl6.ColumnWidth = 23.71;
 
-                Microsoft.Office.Interop.Excel.Range cl7 = oSheet.get_Range("G3", "G3");
-
-                cl5.Value2 = "Tên lớp";
-
-                cl5.ColumnWidth = 23.71;
-
-                Microsoft.Office.Interop.Excel.Range cl8 = oSheet.get_Range("H3", "H3");
-
-                cl5.Value2 = "Học kì";
-
-                cl5.ColumnWidth = 23.71;
-
-                Microsoft.Office.Interop.Excel.Range cl9 = oSheet.get_Range("I3", "I3");
-
-                cl5.Value2 = "Tên năm";
-
-                cl5.ColumnWidth = 23.71;
+               
 
 
 
-                Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "I3");
+                Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "F3");
 
                 rowHead.Font.Bold = true;
 
