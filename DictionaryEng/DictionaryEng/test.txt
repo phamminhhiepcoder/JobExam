@@ -1,4 +1,4 @@
-Book:Danh từ:A written or printed work consisting of pages.:""He enjoys reading a good book before bedtime.""
-Hello:Danh từ:A greeting or expression of goodwill.:""He gave a warm hello to everyone he met.""
-Beautiful:Tính từ:Pleasing to the senses or mind.:""The sunset over the ocean was a beautiful sight.""
-Run:Động từ:To move swiftly on foot.:""She likes to run in the park every morning.""
+Book:Noun:A written or printed work consisting of pages.:"He enjoys reading a good book before bedtime."
+Hello:Noun:A greeting or expression of goodwill.:"He gave a warm hello to everyone he met."
+Beautiful:Adjective:Pleasing to the senses or mind.:"The sunset over the ocean was a beautiful sight."
+Run:Verb:To move swiftly on foot.:"She likes to run in the park every morning."

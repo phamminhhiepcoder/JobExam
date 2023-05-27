@@ -62,9 +62,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(574, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 33);
+            this.label1.Size = new System.Drawing.Size(347, 33);
             this.label1.TabIndex = 1;
-            this.label1.Text = "DICTIONARY ENG - VIE";
+            this.label1.Text = "DICTIONARY ENG -ENG";
             // 
             // label2
             // 
@@ -110,14 +110,9 @@
             // 
             this.cboLoaiTu.FormattingEnabled = true;
             this.cboLoaiTu.Items.AddRange(new object[] {
-            "Danh từ",
-            "Động từ",
-            "Tính từ",
-            "Đại từ",
-            "Số từ",
-            "Phó từ",
-            "Chỉ từ",
-            "Lượng từ"});
+            "Noun",
+            "Verb",
+            "Adjective"});
             this.cboLoaiTu.Location = new System.Drawing.Point(555, 70);
             this.cboLoaiTu.Name = "cboLoaiTu";
             this.cboLoaiTu.Size = new System.Drawing.Size(121, 21);

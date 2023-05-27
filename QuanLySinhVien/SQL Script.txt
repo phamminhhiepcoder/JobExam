@@ -23,15 +23,6 @@ create table GiangVien
 	MaTaiKhoan int not null REFERENCES TaiKhoan(MaTaiKhoan)
 )
 
-alter table Lop
-add constraint UQ_2 unique(TenLop)
-
-
-
-
-
-
-
 
 create table SinhVien
 (
@@ -40,50 +31,13 @@ create table SinhVien
 	DiaChi varchar(255) not null,
 	Email varchar(255) not null unique,
 	Sdt varchar(10) not null unique,
-	MaTaiKhoan int not null REFERENCES TaiKhoan(MaTaiKhoan)
+	MaTaiKhoan int not null REFERENCES TaiKhoan(MaTaiKhoan),
+	MaLop int not null REFERENCES Lop(MaLop),
 )
-create table Khoa(
-	MaKhoa int identity(1,1) primary key,
-	TenKhoa nvarchar(100) not null unique
-)
-
 create table Lop
 (
 	MaLop int identity(3000,1) primary key,
 	TenLop nvarchar(10) not null unique,
-	MaKhoa int not null references Khoa(MaKhoa)
-)
-
-create table Nam
-(
-	MaNam int identity(1,1) primary key,
-	TenNam varchar(20) not null unique
-)
-create table HocKi
-(
-	MaHK int not null,
-	MaNam int not null references Nam(MaNam),
-	primary key(MaHK,MaNam)
-)
-create table SinhVien_Lop
-(
-	MaSV int not null references SinhVien(MaSV),
-	MaLop int not null references Lop(MaLop),
-	MaHK int not null,
-	MaNam int not null,
-	primary key(MaSV,MaLop),
-	foreign key (MaHK,MaNam) references HocKi(MaHK,MaNam)
-)
-
-
-create table GiangVien_Lop
-(
-	MaGV int not null references GiangVien(MaGV),
-	MaLop int not null references Lop(MaLop),
-	MaHK int not null,
-	MaNam int not null,
-	primary key(MaGV,MaLop),
-	foreign key (MaHK,MaNam) references HocKi(MaHK,MaNam)
 )
 
 create table MonHoc
@@ -111,108 +65,10 @@ create table ChiTietDiem
 	MaDiem int not null,
 	MaGV int not null references GiangVien(MaGV),
 	MaSV int not null references SinhVien(MaSV),
-	MaHK int not null,
-	MaNam int not null,
 	GhiChu nvarchar(100),
 	primary key(MaDiem,MaSV,MaGV),
-	foreign key (MaHK,MaNam) references HocKi(MaHK,MaNam),
 	foreign key (MaMonHoc,MaDiem) references Diem(MaMonHoc,MaDiem)
 )
-
-
-
-create table ViPham(
-MaViPham int identity(1,1) primary key,
-TenViPham nvarchar(100)
-)
-
-create table HocSinh_ViPham(
-MaViPham int not null REFERENCES ViPham(MaViPham),
-MaHS int not null REFERENCES HocSinh(MaHS),
-MaHK int not null,
-MaNam int not null,
-XuPhat nvarchar(100),
-foreign key (MaHK,MaNam) references HocKi(MaHK,MaNam),
-PRIMARY KEY(MaViPham, MaHS)
-)
-
-create table GiaoVien_ViPham(
-MaViPham int not null REFERENCES ViPham(MaViPham),
-MaGV int not null REFERENCES GiaoVien(MaGV),
-MaHK int not null,
-MaNam int not null,
-XuPhat nvarchar(100),
-foreign key (MaHK,MaNam) references HocKi(MaHK,MaNam),
-PRIMARY KEY(MaViPham, MaGV)
-)
-
-drop table GiaoVien_ViPham
-
-select ViPham.MaViPham, GiaoVien.MaGV, GiaoVien.TenGV, TenViPham, TenNam, HocKi.MaHK
-from GiaoVien_ViPham
-inner join GiaoVien on GiaoVien_ViPham.MaGV = GiaoVien.MaGV
-inner join ViPham on GiaoVien_ViPham.MaViPham = ViPham.MaViPham
-inner join HocKi on HocKi.MaHK = GiaoVien_ViPham.MaHK 
-inner join Nam on HocKi.MaNam = GiaoVien_ViPham.MaHK
-
-ALTER TABLE HocSinh
-ADD MaNienKhoa INT,
-ADD CONSTRAINT FK_HocSinh_NienKhoa
-FOREIGN KEY (MaNienKhoa) REFERENCES NienKhoa(MaNienKhoa)
-
-ALTER TABLE HocSinh
-ADD CONSTRAINT FK_HocSinh_NienKhoa
-FOREIGN KEY (MaNienKhoa) REFERENCES NienKhoa(MaNienKhoa);
-
-alter table Lop
-drop column MaNienKhoa
-
-alter table Lop
-drop column MaHK
-
-ALTER TABLE Lop
-ADD MaHK INT,
-FOREIGN KEY (MaHK) REFERENCES HocKi(MaHK);
-
-ALTER TABLE Lop
-ADD CONSTRAINT FK_Lop_HK
-FOREIGN KEY (MaHK) REFERENCES HocKi(MaHK);
-
-
-ALTER TABLE Lop
-ADD MaHK INT,
-ADD MaNam INT,
-CONSTRAINT FK_Lop_HocKi FOREIGN KEY (MaHK, MaNam) REFERENCES HocKi(MaHK, MaNam);
-
-from Lop 
-inner join 
-
-ALTER TABLE Lop
-ADD MaHK INT;
-
-ALTER TABLE Lop
-ADD MaNam INT;
-
-ALTER TABLE Lop
-ADD CONSTRAINT FK_Lop_HocKi FOREIGN KEY (MaHK, MaNam) REFERENCES HocKi(MaHK, MaNam);
-
-select HocSinh.MaHS, TenHS, DiaChi, Email, Sdt, TenNienKhoa, TenLop, HocSinh_Lop.MaHK as HocKi, TenNam 
-from HocSinh
-inner join HocSinh_Lop on HocSinh_Lop.MaHS = HocSinh.MaHS
-inner join NienKhoa on HocSinh.MaNienKhoa = NienKhoa.MaNienKhoa
-inner join Lop on Lop.MaLop = HocSinh_Lop.MaLop
-inner join Nam on Nam.MaNam = HocSinh_Lop.MaNam
-where Lop.MaLop is not null
-
-
-select * from HocSinh
-inner join NienKhoa on NienKhoa.MaNienKhoa = HocSinh.MaNienKhoa
-
-drop table NienKhoa
-
-
-
-
 
 
 

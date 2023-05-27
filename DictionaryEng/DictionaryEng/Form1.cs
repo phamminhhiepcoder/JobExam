@@ -14,7 +14,7 @@ namespace DictionaryEng
 {
     public partial class frmTuDien : Form
     {
-        EnglishVietnameseDictionary dictionary = new EnglishVietnameseDictionary();
+        Dictionary dictionary = new Dictionary();
         DataTable dt = new DataTable();
         public frmTuDien()
         {
@@ -23,7 +23,7 @@ namespace DictionaryEng
        
         void loadAgain()
         {
-            string filePath = "C:\\Users\\Administrator\\Desktop\\C# Projects\\DictionaryEng\\DictionaryEng\\test.txt";
+            string filePath = "C:\\Users\\Administrator\\Desktop\\C# Projects\\JobExam\\DictionaryEng\\DictionaryEng\\test.txt";
             DataTable inputDataTable = new DataTable();
             inputDataTable.Columns.Add("Word");
             inputDataTable.Columns.Add("PartOfSpeech");
@@ -36,7 +36,7 @@ namespace DictionaryEng
                 string[] parts = line.Split(':');
                 inputDataTable.Rows.Add(parts[0], parts[1], parts[2], parts[3]);
             }
-            dictionary = EnglishVietnameseDictionary.ConvertToDictionary(inputDataTable);
+            dictionary = Dictionary.ConvertToDictionary(inputDataTable);
             dgvDictionary.DataSource = inputDataTable;
         }
         void readFile()
@@ -47,16 +47,16 @@ namespace DictionaryEng
             inputDataTable.Columns.Add("Meaning");
             inputDataTable.Columns.Add("Example");
 
-            string[] lines = File.ReadAllLines("C:\\Users\\Administrator\\Desktop\\C# Projects\\DictionaryEng\\DictionaryEng\\test.txt");
+            string[] lines = File.ReadAllLines("C:\\Users\\Administrator\\Desktop\\C# Projects\\JobExam\\DictionaryEng\\DictionaryEng\\test.txt");
             foreach (string line in lines)
             {
                 string[] parts = line.Split(':');
                 inputDataTable.Rows.Add(parts[0], parts[1], parts[2], parts[3]);
             }
 
-            dictionary = EnglishVietnameseDictionary.ConvertToDictionary(inputDataTable);
+            dictionary = Dictionary.ConvertToDictionary(inputDataTable);
 
-            DataTable outputDataTable = EnglishVietnameseDictionary.ConvertToDataTable(dictionary);
+            DataTable outputDataTable = Dictionary.ConvertToDataTable(dictionary);
             dgvDictionary.DataSource = outputDataTable;
         }
         void convert()
@@ -71,17 +71,16 @@ namespace DictionaryEng
                 string meaning = row["Meaning"].ToString();
                 string example = row["Example"].ToString();
 
-                string formattedEntry = $"{word}:{partOfSpeech}:{meaning}:\"{example}\"";
+                string formattedEntry = $"{word}:{partOfSpeech}:{meaning}:{example}";
                 textBuilder.AppendLine(formattedEntry);
             }
 
-            string filePath = "C:\\Users\\Administrator\\Desktop\\C# Projects\\DictionaryEng\\DictionaryEng\\test.txt";
+            string filePath = "C:\\Users\\Administrator\\Desktop\\C# Projects\\JobExam\\DictionaryEng\\DictionaryEng\\test.txt";
             File.WriteAllText(filePath, textBuilder.ToString());
 
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            loadAgain();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,6 +92,7 @@ namespace DictionaryEng
             else
             {
                 dictionary.AddEntry(txtTu.Text, cboLoaiTu.Text, txtNghia.Text, txtViDu.Text);
+                convert();
                 loadAgain();
             }
         }
@@ -110,7 +110,7 @@ namespace DictionaryEng
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            if(Excel.baoCaoThongKeTuDien("Từ Điển", EnglishVietnameseDictionary.ConvertToDataTable(dictionary)))
+            if(Excel.baoCaoThongKeTuDien("Từ Điển", Dictionary.ConvertToDataTable(dictionary)))
             {
 
             }
@@ -142,6 +142,7 @@ namespace DictionaryEng
         private void btnNap_Click(object sender, EventArgs e)
         {
             readFile();
+            loadAgain();
         }
 
        

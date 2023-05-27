@@ -53,7 +53,7 @@
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="Definition.cs" />
     <Compile Include="DictionaryEntry.cs" />
-    <Compile Include="EnglishVietnameseDictionary.cs" />
+    <Compile Include="Dictionary.cs" />
     <Compile Include="EntryDefinition.cs" />
     <Compile Include="Excel.cs" />
     <Compile Include="Form1.cs">

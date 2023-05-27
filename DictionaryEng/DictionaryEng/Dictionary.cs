@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace DictionaryEnglishToVietnamese
 {
-    class EnglishVietnameseDictionary
+    class Dictionary
     {
         private Hashtable hashTable;
         private BinarySearchTree bst;
 
-        public EnglishVietnameseDictionary()
+        public Dictionary()
         {
             hashTable = new Hashtable();
             bst = new BinarySearchTree();
@@ -51,9 +51,9 @@ namespace DictionaryEnglishToVietnamese
             Console.WriteLine("Đã thêm mục từ vào từ điển.");
         }
 
-        public static EnglishVietnameseDictionary ConvertToDictionary(DataTable dataTable)
+        public static Dictionary ConvertToDictionary(DataTable dataTable)
         {
-            EnglishVietnameseDictionary evd = new EnglishVietnameseDictionary();
+            Dictionary evd = new Dictionary();
 
             foreach (DataRow row in dataTable.Rows)
             {
@@ -68,7 +68,7 @@ namespace DictionaryEnglishToVietnamese
             return evd;
         }
 
-        public static DataTable ConvertToDataTable(EnglishVietnameseDictionary evd)
+        public static DataTable ConvertToDataTable(Dictionary evd)
         {
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("Word");
