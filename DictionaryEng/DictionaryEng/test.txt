@@ -1,3 +1,4 @@
+Cat:Noun:An animal:The cat is sleeping
 Book:Noun:A written or printed work consisting of pages.:"He enjoys reading a good book before bedtime."
 Hello:Noun:A greeting or expression of goodwill.:"He gave a warm hello to everyone he met."
 Beautiful:Adjective:Pleasing to the senses or mind.:"The sunset over the ocean was a beautiful sight."
