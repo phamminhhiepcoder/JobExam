@@ -39,6 +39,26 @@ namespace DictionaryEng
             dictionary = Dictionary.ConvertToDictionary(inputDataTable);
             dgvDictionary.DataSource = inputDataTable;
         }
+        void readFile()
+        {
+            DataTable inputDataTable = new DataTable();
+            inputDataTable.Columns.Add("Word");
+            inputDataTable.Columns.Add("PartOfSpeech");
+            inputDataTable.Columns.Add("Meaning");
+            inputDataTable.Columns.Add("Example");
+
+            string[] lines = File.ReadAllLines("C:\\Users\\Administrator\\Desktop\\C# Projects\\JobExam\\DictionaryEng\\DictionaryEng\\test.txt");
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(':');
+                inputDataTable.Rows.Add(parts[0], parts[1], parts[2], parts[3]);
+            }
+
+            dictionary = Dictionary.ConvertToDictionary(inputDataTable);
+
+            DataTable outputDataTable = Dictionary.ConvertToDataTable(dictionary);
+            dgvDictionary.DataSource = outputDataTable;
+        }
         void convert()
         {
             dt = dictionary.ConvertToDataTable();
@@ -121,7 +141,10 @@ namespace DictionaryEng
 
         private void btnNap_Click(object sender, EventArgs e)
         {
+            readFile();
             loadAgain();
         }
+
+       
     }
 }

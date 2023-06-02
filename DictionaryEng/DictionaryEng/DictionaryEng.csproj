@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearchTree.cs" />
+    <Compile Include="Definition.cs" />
     <Compile Include="DictionaryEntry.cs" />
     <Compile Include="Dictionary.cs" />
     <Compile Include="EntryDefinition.cs" />

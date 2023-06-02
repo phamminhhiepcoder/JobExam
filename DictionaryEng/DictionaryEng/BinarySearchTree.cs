@@ -24,7 +24,10 @@ namespace DictionaryEnglishToVietnamese
             }
         }
 
-        
+        public void Insert(string key)
+        {
+            root = Insert(root, key);
+        }
 
         private Node Insert(Node node, string key)
         {
@@ -45,11 +48,11 @@ namespace DictionaryEnglishToVietnamese
             }
             return node;
         }
-        public void Insert(string key)
+
+        public void Delete(string key)
         {
-            root = Insert(root, key);
+            root = Delete(root, key);
         }
-       
 
         private Node Delete(Node node, string key)
         {
@@ -83,11 +86,6 @@ namespace DictionaryEnglishToVietnamese
             return node;
         }
 
-        public void Delete(string key)
-        {
-            root = Delete(root, key);
-        }
-
         private string MinValue(Node node)
         {
             string minValue = node.Key;
@@ -99,6 +97,9 @@ namespace DictionaryEnglishToVietnamese
             return minValue;
         }
 
-   
+        public void Clear()
+        {
+            root = null;
+        }
     }
 }
